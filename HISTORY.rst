@@ -2,6 +2,10 @@
 History
 -------
 
+itt-7.0.3 (2016-05-28)
+++++++++++++++++++
+
+- Fork wakatime and rename/repoint to itimetrack
 
 7.0.3 (2016-05-16)
 ++++++++++++++++++
@@ -840,4 +844,3 @@ History
 ++++++++++++++++++
 
 - Birth
-

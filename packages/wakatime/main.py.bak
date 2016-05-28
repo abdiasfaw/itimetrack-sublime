@@ -75,7 +75,7 @@ def parseConfigFile(configFile=None):
     """
 
     if not configFile:
-        configFile = os.path.join(os.path.expanduser('~'), '.itimetrack.cfg')
+        configFile = os.path.join(os.path.expanduser('~'), '.wakatime.cfg')
 
     configs = configparser.SafeConfigParser()
     try:
@@ -308,7 +308,7 @@ def send_heartbeat(project=None, branch=None, hostname=None, stats={}, key=None,
     """
 
     if not api_url:
-        api_url = 'https://itimetrack.com/api/v1/heartbeats'
+        api_url = 'https://api.wakatime.com/api/v1/heartbeats'
     if not timeout:
         timeout = 60
     log.debug('Sending heartbeat to api at %s' % api_url)

@@ -545,9 +545,9 @@ class SendHeartbeatsThread(threading.Thread):
                 else:
                     update_status_bar('Error')
                 if retcode:
-                    log(DEBUG if retcode == 102 else ERROR, 'itimetrack-core exited with status: {0}'.format(retcode))
+                    log(DEBUG if retcode == 102 else ERROR, 'wakatime-core exited with status: {0}'.format(retcode))
                 if output:
-                    log(ERROR, u('itimetrack-core output: {0}').format(output))
+                    log(ERROR, u('wakatime-core output: {0}').format(output))
             except:
                 log(ERROR, u(sys.exc_info()[1]))
                 update_status_bar('Error')
@@ -605,7 +605,7 @@ def plugin_loaded():
     global SETTINGS
     SETTINGS = sublime.load_settings(SETTINGS_FILE)
 
-    log(INFO, 'Initializing iTimeTrack plugin v%s' % __version__)
+    log(INFO, 'Initializing WakaTime plugin v%s' % __version__)
     update_status_bar('Initializing')
 
     if not python_binary():
@@ -613,7 +613,7 @@ def plugin_loaded():
         if platform.system() == 'Windows':
             set_timeout(download_python, 0)
         else:
-            sublime.error_message("Unable to find Python binary!\niTimeTrack needs Python to work correctly.\n\nGo to https://www.python.org/downloads")
+            sublime.error_message("Unable to find Python binary!\nWakaTime needs Python to work correctly.\n\nGo to https://www.python.org/downloads")
             return
 
     after_loaded()
@@ -646,4 +646,4 @@ class WakatimeListener(sublime_plugin.EventListener):
 class WakatimeDashboardCommand(sublime_plugin.ApplicationCommand):
 
     def run(self):
-        webbrowser.open_new_tab('https://itimetrack.com/app/')
+        webbrowser.open_new_tab('https://wakatime.com/dashboard')

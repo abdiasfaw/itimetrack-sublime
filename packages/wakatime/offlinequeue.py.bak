@@ -28,7 +28,7 @@ log = logging.getLogger('WakaTime')
 
 
 class Queue(object):
-    db_file = os.path.join(os.path.expanduser('~'), '.itimetrack.db')
+    db_file = os.path.join(os.path.expanduser('~'), '.wakatime.db')
     table_name = 'heartbeat_1'
 
     def get_db_file(self):
